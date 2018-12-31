@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-<title>AR &dash; ThreeJS</title>
-<!-- three.js library -->
-<script src='three.min.js'></script>
-<!-- ar.js -->
-<script src="ar.js"></script>
-<script>
-    THREEx.ArToolkitContext.baseURL = ''
-</script>
+<html>
 
-<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>AR &dash; ThreeJS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src='js/three.min.js'></script>
+    <script src="js/ar.js"></script>
+    <script>
+        THREEx.ArToolkitContext.baseURL = ''
+    </script>
+</head>
+
+<body>
     <script>
         //////////////////////////////////////////////////////////////////////////////////
          //		Init
@@ -21,7 +25,7 @@
             alpha: true
         });
         renderer.setClearColor(new THREE.Color('lightgrey'), 0)
-        renderer.setSize(640, 480);
+         renderer.setSize(640, 480);
         renderer.domElement.style.position = 'absolute'
         renderer.domElement.style.top = '0px'
         renderer.domElement.style.left = '0px'
@@ -46,16 +50,16 @@
          ////////////////////////////////////////////////////////////////////////////////
 
         var arToolkitSource = new THREEx.ArToolkitSource({
-            // to read from the webcam 
+            // to read from the webcam
             sourceType: 'webcam',
 
             // // to read from an image
             // sourceType : 'image',
-            // sourceUrl : THREEx.ArToolkitContext.baseURL + 'data/images/img.jpg',		
+            // sourceUrl : THREEx.ArToolkitContext.baseURL + 'data/images/img.jpg',
 
             // to read from a video
             // sourceType : 'video',
-            // sourceUrl : THREEx.ArToolkitContext.baseURL + 'data/videos/headtracking.mp4',		
+            // sourceUrl : THREEx.ArToolkitContext.baseURL + 'data/videos/headtracking.mp4',
         })
 
          arToolkitSource.init(function onReady() {
@@ -117,7 +121,7 @@
          //		add an object in the scene
          //////////////////////////////////////////////////////////////////////////////////
 
-         // add a torus knot	
+         // add a torus knot
         var geometry = new THREE.CubeGeometry(1, 1, 1);
         var material = new THREE.MeshNormalMaterial({
             transparent: true,
@@ -163,3 +167,5 @@
         })
     </script>
 </body>
+
+</html>
