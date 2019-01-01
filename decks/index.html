@@ -176,6 +176,18 @@
             });
         });
 
+        var sideDeck = new Firebase("https://armtg2019.firebaseio.com/USERS/Cody_Bennett/DECKS/546554756df/SIDEBOARD/");
+        sideDeck.orderByChild('count').on("value", function(snap) {
+          document.getElementById('decks').innerHTML += '<br><h2>Sideboard:</h2><br>';
+            snap.forEach(function(xsnap) {
+                var data = xsnap.val();
+                var name = encodeURIComponent(data[ "name" ]);
+                var img = "http://gatherer.wizards.com/Handlers/Image.ashx?name=" + name + "&type=card";
+                var num = data[ "count" ];
+                document.getElementById('decks').innerHTML += '<div><img width="100px" src="'+ img + '"/><br>' + num + 'x</div>';
+            });
+        });
+
 
 /*var db2 = new Firebase( "" );
 db2.on( "value", function ( snap ) {
