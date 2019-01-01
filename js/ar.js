@@ -62,7 +62,7 @@ var Qb=[Ik,Zh,_h,Qj,Qi,Pi,Ri,Ag,sg,qg,rg,yg,kh,jh,Oi,Mj];var Rb=[Jk,ki,ji,gi];va
 		this.defaultMarkerWidth = 1;
 		this.patternMarkers = {};
 		this.barcodeMarkers = {};
-		this.transform_mat = new Float32Array(16);
+		this.transform_mat = new Float32Array(21);
 
 		this.canvas = document.createElement('canvas');
 		this.canvas.width = w;
