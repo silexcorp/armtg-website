@@ -12,7 +12,7 @@ ArMTG
 
 ![ArMTG](https://i.postimg.cc/xChKswmV/ArMTG.png)
 
-### Live version here: [https://mtg.codyb.co](https://mtg.codyb.co).
+### Live version here: [https://codyb.co/mtg](https://codyb.co/mtg).
 
 
 [npm-badge]: https://goo.gl/GKdS5t
