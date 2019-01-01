@@ -16,7 +16,28 @@
 <body>
 
 <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<script>
+let g = "color:#777;font-weight:bold;";let b = "font-size:21px; font-weight:200; letter-spacing:0.2em; line-height:1.4em; font-family:helvetica,arial;color:#0F669D;font-weight:bold;";let project = "font-size:34px; font-weight:200; letter-spacing:0.02em; line-height:1.4em; font-family:helvetica,arial; color:rgba(0,0,0,0.9);";let me = "font-size:21px; font-weight:200; letter-spacing:0.2em; line-height:1.4em; font-family:helvetica,arial; color:rgba(0,0,25,0.5);";console.log( "%cArMTG", project ), console.log( "%cBy Cody Bennett", me ), console.log( "%chttps://github.com/CodyJasonBennett/ArMTG", b ), console.log( "%c", "font-size:34px; line-height:1.4em;" );
 
+  var db = new Firebase( "https://armtg2019.firebaseio.com/" );
+  db.orderByChild( 'name' ).on( "value", function ( snap ) {
+    snap.forEach( function ( xsnap ) {
+      var data = xsnap.val();
+      var name = data[ "name" ];
+      var card = data[ "card" ];
+      console.log(name + ', ' + card);
+    } );
+  } );
+
+
+/*var db2 = new Firebase( "" );
+db2.on( "value", function ( snap ) {
+  var data = snap.val();
+  var mode = data[ "mode" ];
+  init( mode );
+} );*/
+
+</script>
 </body>
 
 </html>
