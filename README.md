@@ -1,7 +1,7 @@
 ArMTG
 ========
 
-![Latest NPM release][npm-badge]
+[![npm](https://img.shields.io/npm/v/ar.js.svg)](https://www.npmjs.com/package/ar.js)
 ![License][license-badge]
 ![Dependencies][dependencies-badge]
 ![Dev Dependencies][devDependencies-badge]
@@ -31,7 +31,6 @@ Be sure to tag your issue [here](https://github.com/CodyJasonBennett/ArMTG/issue
 
 If you  are interested in developing ArMTG with us, you can reach to us through the [Official ArMTG Discord](https://discord.gg/) which we check regularly.
 
-[npm-badge]: https://goo.gl/GKdS5t
 [license-badge]: https://goo.gl/wcBRCg
 [dependencies-badge]: https://goo.gl/gbCEnm
 [devDependencies-badge]: https://goo.gl/UbqCPd
