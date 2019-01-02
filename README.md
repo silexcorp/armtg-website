@@ -29,7 +29,7 @@ Be sure to tag your issue [here](https://github.com/CodyJasonBennett/ArMTG/issue
 
 ## Developer
 
-If you  are interesting in developing ArMTG with us, you can reach to us through the [Official ArMTG Discord](https://discord.gg/) which we check regularly.
+If you  are interested in developing ArMTG with us, you can reach to us through the [Official ArMTG Discord](https://discord.gg/) which we check regularly.
 
 [npm-badge]: https://goo.gl/GKdS5t
 [license-badge]: https://goo.gl/wcBRCg
