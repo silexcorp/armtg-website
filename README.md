@@ -14,9 +14,9 @@ ArMTG
 
 ## Overview
 
-ArMTG allows you to play Magic, The Gathering via Augmented Reality, using a set of printed trackers to fetch card images from Gatherer, allowing for use of multiple decks and formats. It offers features like sideboarding and shuffling through the __, without the need to physically shuffle the cards, and __.
+ArMTG allows you to play Magic, The Gathering via Augmented Reality, using a set of printed trackers to fetch card images from Gatherer, allowing for use of multiple decks and formats. It offers features like sideboarding and shuffling through the deck interface, without the need to physically shuffle the cards.
 
-ArMTG consists of a deck editor overlay for loading and saving multiple decks, and a __, using your device's webcam.
+ArMTG consists of a deck editor overlay for loading and saving multiple decks, and trying out others' decks, using your device's webcam and interchangeable encoded cards.
 
 
 ### Live version here: [https://codyb.co/mtg](https://codyb.co/mtg).
