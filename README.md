@@ -23,7 +23,7 @@ ArMTG consists of a deck editor overlay for loading and saving multiple decks, a
 
 ## Issues / bugs
 
-Make sure you check to see if your issue is related to other issues before creating any, or if it is on [the list of things we fixed but haven't released yet](https://github.com/CodyJasonBennett/ArMTG/wiki/Features-and-fixes-not-released-yet)
+Make sure you check to see if your issue is related to other issues before creating any, or if it is on [the list of things we fixed but haven't released yet](https://github.com/CodyJasonBennett/ArMTG/wiki/Features-and-fixes-not-released-yet).
 
 Be sure to tag your issue using the **bug** tag!
 
