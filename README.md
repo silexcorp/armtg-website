@@ -19,7 +19,7 @@ ArMTG allows you to play Magic, The Gathering via Augmented Reality, using a set
 ArMTG consists of a deck editor overlay for loading and saving multiple decks, and trying out others' decks, using your device's webcam and interchangeable encoded cards.
 
 
-### Live version here: [https://codyb.co/mtg](https://codyb.co/mtg).
+### Live version: [https://codyb.co/mtg](https://codyb.co/mtg).
 
 ## Issues / bugs
 
