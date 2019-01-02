@@ -8,7 +8,7 @@ ArMTG
 ![Build Status](https://goo.gl/mYwr7u)
 ![Language Grade: JavaScript](https://goo.gl/SMkehA)
 
-## Augmented Reality alternative to Magic Online
+## An augmented reality solution for Magic Online.
 
 ![ArMTG](https://i.postimg.cc/xChKswmV/ArMTG.png)
 
