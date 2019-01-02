@@ -15,7 +15,7 @@
 
 <body>
     <script>
-        //////////////////////////////////////////////////////////////////////////////////
+         //////////////////////////////////////////////////////////////////////////////////
          //		Init
          //////////////////////////////////////////////////////////////////////////////////
 
@@ -25,7 +25,7 @@
             alpha: true
         });
         renderer.setClearColor(new THREE.Color('lightgrey'), 0)
-         renderer.setSize(640, 480);
+        renderer.setSize(1920, 1080);
         renderer.domElement.style.position = 'absolute'
         renderer.domElement.style.top = '0px'
         renderer.domElement.style.left = '0px'
@@ -122,24 +122,45 @@
          //////////////////////////////////////////////////////////////////////////////////
 
          // add a torus knot
-        var geometry = new THREE.CubeGeometry(1, 1, 1);
-        var material = new THREE.MeshNormalMaterial({
+        var geometry = new THREE.CubeGeometry(0.9, 0.01, 1.2);
+        /*var material = new THREE.MeshNormalMaterial({
             transparent: true,
             opacity: 0.5,
             side: THREE.DoubleSide
-        });
+        });*/
+		var material = new THREE.MeshBasicMaterial({
+			map: THREE.ImageUtils.loadTexture("card.jpg")
+		});
         var mesh = new THREE.Mesh(geometry, material);
         mesh.position.y = geometry.parameters.height / 2
-         scene.add(mesh);
+		scene.add(mesh);
+		var geometry = new THREE.TorusKnotGeometry(0.3, 0.1, 64, 16);
+		var material = new THREE.MeshNormalMaterial();
+		var mesh = new THREE.Mesh(geometry, material);
+		mesh.position.y = 0.5
+		//scene.add(mesh);
+		 
+		function renderCard(card) {
+			var texture, material, url;
 
-        var geometry = new THREE.TorusKnotGeometry(0.3, 0.1, 64, 16);
-        var material = new THREE.MeshNormalMaterial();
-        var mesh = new THREE.Mesh(geometry, material);
-        mesh.position.y = 0.5
-         scene.add(mesh);
+			texture = THREE.ImageUtils.loadTexture( url );
+
+			texture.wrapS = THREE.RepeatWrapping; 
+			texture.wrapT = THREE.RepeatWrapping;
+
+			texture.repeat.set( 4, 4 ); 
+
+			material = new THREE.MeshLambertMaterial({ map : texture });
+			card = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), material);
+			card.material.side = THREE.DoubleSide;
+			card.rotation.z = Math.PI / 2;
+
+			scene.add(card);
+		}
+		
 
         onRenderFcts.push(function(delta) {
-            mesh.rotation.x += Math.PI * delta
+            //mesh.rotation.x += Math.PI * delta
         })
 
          //////////////////////////////////////////////////////////////////////////////////
