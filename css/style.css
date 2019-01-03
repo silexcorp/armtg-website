@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600");
 @font-face{
-	font-family: a;
-	src: url(a.ttf);
+	font-family: ArMTG;
+	src: url(ArMTG.ttf);
 }
 .account {
   position: fixed;
@@ -65,7 +65,7 @@ body {
   width: 100%;
 }
 .title h1 {
-  font-family: a;
+  font-family: ArMTG;
   position: relative;
   color: #FFFFFF;
   font-weight: 600;
