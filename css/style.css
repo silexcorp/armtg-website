@@ -36,10 +36,10 @@ body {
   text-transform: uppercase;
   font-size: 24px;
 }
-a, img {
+.link, img {
 	border-radius: 0.2em;
 }
-a, a:link, a:visited, a:active {
+.link, .link:link, .link:visited, .link:active {
   font-family: "Montserrat";
   font-size: 18px;
   text-decoration: none;
@@ -47,7 +47,7 @@ a, a:link, a:visited, a:active {
   padding: 4px 8px;
   color: #f7f7f7;
 }
-a:hover, a:link:hover, a:visited:hover, a:active:hover {
+.link:hover, .link:link:hover, .link:visited:hover, .link:active:hover {
   background: #edf3f8;
   color: #212121;
 }
@@ -97,10 +97,10 @@ a:hover, a:link:hover, a:visited:hover, a:active:hover {
 }
 @keyframes fade-out {
 	0% {
-		opacity: 1;
+		filter: blur(0px);
 	}
 	100% {
-		opacity: 0.4;
+		filter: blur(5px);
 	}
 }
 canvas {
@@ -114,18 +114,43 @@ a, .title {
 	animation: fade-in 1.5s ease 2s forwards;
 }
 #editor, #app {
-	color: #fff;
+	color: #9fa2b4;
 	font-size: 3rem;
 	position: absolute;
 	z-index: 999;
 	width: 75%;
 	height: 80%;
-	background: #010104;
-	background: rgba(0,0,0,0.9);
+	background: #373946;
+	background: rgba(41,42,53,0.9);
 	margin: 0 auto;
 	left: 12.5%;
 	top: 10%;
 	transition: 0.4s ease;
 	opacity: 0;
 	display: block;
+}
+#app {
+	display: none;
+}
+#decks {
+	width: 100%;
+	height: 28%;
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	padding: 2% 0 2% 0;
+}
+#decks div {
+	border-radius: 0.2em;
+	width: 30%;
+	height: 100%;
+	margin-left: 2%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	border: 1px solid white;
+	-webkit-text-stroke: 1px #1c1c1c;
+}
+#decks div:nth-child(1) {
+	margin: 0;
 }
