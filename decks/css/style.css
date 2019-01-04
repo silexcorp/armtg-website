@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600");
+@font-face{
+	font-family: ArMTG;
+	src: url(ArMTG.ttf);
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #080926;
+  font-family: "Montserrat";
+}
+.account {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  z-index: 10;
+  text-transform: uppercase;
+  font-size: 18px;
+  padding-left: 25px;
+}
+.account img {
+	position: absolute;
+	height: 136%;
+	width: auto;
+	left: 0;
+	top: -0.25rem;
+}
+.links {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 10;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+.link, img {
+	border-radius: 0.2em;
+}
+.link, .link:link, .link:visited, .link:active {
+  font-family: "Montserrat";
+  font-size: 18px;
+  text-decoration: none;
+  background: #212121;
+  padding: 4px 8px;
+  color: #f7f7f7;
+}
+.link:hover, .link:link:hover, .link:visited:hover, .link:active:hover {
+  background: #edf3f8;
+  color: #212121;
+}
+
+.title {
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  width: 100%;
+}
+.title h1 {
+  font-family: ArMTG;
+  position: relative;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 120px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.title h1 span {
+  font-weight: 600;
+  font-size: 120px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.title h3 {
+  font-weight: 200;
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+}
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes fade-out {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.4;
+	}
+}
+canvas {
+  -webkit-transform: translateZ(1px);
+  transform: translateZ(1px);
+  animation: fade-out 1.5s ease 2s forwards;
+  opacity: 1;
+}
+a, .title {
+	opacity: 0;
+	animation: fade-in 1.5s ease 2s forwards;
+}
+#editor, #app {
+	color: #9fa2b4;
+	font-size: 3rem;
+	position: absolute;
+	z-index: 999;
+	width: 75%;
+	height: 80%;
+	background: #373946;
+	background: rgba(41,42,53,0.9);
+	margin: 0 auto;
+	left: 12.5%;
+	top: 10%;
+	transition: 0.4s ease;
+	opacity: 0;
+	display: block;
+}
+#app {
+	display: none;
+}
+#decks {
+	width: 100%;
+	height: 28%;
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	padding: 2% 0 2% 0;
+}
+#decks div {
+	border-radius: 0.2em;
+	width: 30%;
+	height: 100%;
+	margin-left: 2%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	border: 1px solid white;
+	-webkit-text-stroke: 1px #1c1c1c;
+}
+#decks div:nth-child(1) {
+	margin: 0;
+}

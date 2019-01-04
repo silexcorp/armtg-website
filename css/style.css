@@ -1,156 +1,188 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600|Oswald|Open+Sans");
 @font-face{
 	font-family: ArMTG;
 	src: url(ArMTG.ttf);
 }
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  background: #080926;
-  font-family: "Montserrat";
+body, html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
 }
-.account {
-  position: fixed;
-  left: 20px;
-  top: 20px;
-  z-index: 10;
-  text-transform: uppercase;
-  font-size: 18px;
-  padding-left: 25px;
+ body {
+	height: 101%;
+    font-family: Montserrat;
+    background: #0F2027;
+    background: #080926;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.account img {
+* {
+    box-sizing: border-box;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    transition: 1s;
+    background-image: url(https://cdn.discordapp.com/attachments/525294361391398932/530642695258112030/back.PNG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://cdn.discordapp.com/attachments/525294361391398932/530642695258112030/back.PNG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 100px;
+    transition: 1s;
+}
+#scroll {	
 	position: absolute;
-	height: 136%;
-	width: auto;
-	left: 0;
-	top: -0.25rem;
+	left: 49%;
+	margin-top: 35%;
+	font-size: 50px;
+	color: #f3f3f3;
+	-webkit-animation: scroll 1s infinite; 
+	animation: scroll 1s infinite;
+	cursor: pointer;
 }
-.links {
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
-  z-index: 10;
-  text-transform: uppercase;
-  font-size: 24px;
+@-webkit-keyframes scroll {
+	 0% { top: 15%; }
+	 50%   { top: 20%; }
+	 100% { top: 15%; }
 }
-.link, img {
-	border-radius: 0.2em;
+@keyframes scroll {
+	 0% { top: 15%; }
+	 50%   { top: 20%; }
+	 100% { top: 15%; }
 }
-.link, .link:link, .link:visited, .link:active {
-  font-family: "Montserrat";
-  font-size: 18px;
-  text-decoration: none;
-  background: #212121;
-  padding: 4px 8px;
-  color: #f7f7f7;
+header .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 88px;
+    background-image: url(https://cdn.discordapp.com/attachments/529444713799876650/530645430711615489/armtg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s;
 }
-.link:hover, .link:link:hover, .link:visited:hover, .link:active:hover {
-  background: #edf3f8;
-  color: #212121;
+header nav {
+    position: relative;
+    float: right;
 }
-
-.title {
-  z-index: 10;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  text-align: center;
-  width: 100%;
+header nav ul {
+    position: relative;
+    display: flex;
+    opacity: 0;
+    transform: translate(100px);
+    visibility: hidden;
+    transition: 0.5s;
 }
-.title h1 {
-  font-family: ArMTG;
-  position: relative;
-  color: #FFFFFF;
-  font-weight: 600;
-  font-size: 120px;
-  padding: 0;
-  margin: 0;
-  line-height: 1;
+header nav ul li {
+    list-style: none;
+    margin: 0 10px;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 10px;
+    color: #efefef;
 }
-.title h1 span {
-  font-weight: 600;
-  font-size: 120px;
-  padding: 0;
-  margin: 0;
-  line-height: 1;
+header nav ul li: hover {
+    text-decoration: underline;
 }
-.title h3 {
-  font-weight: 200;
-  font-size: 30px;
-  padding: 0;
-  margin: 0;
-  line-height: 1;
-  color: #FFFFFF;
-  letter-spacing: 2px;
+header.scrolled {
+    height: 50px;
+}
+@keyframes init {
+    0% {
+        background-image: url(https://cdn.discordapp.com/attachments/529444713799876650/530645430711615489/armtg.png);
+    }
+    10% {
+        background-image: url(../favicon.png);
+    }
+    100% {
+        background-image: url(../favicon.png);
+        opacity: 1;
+    }
+}
+header.scrolled .icon {
+    animation: init 1s ease 0.5s forwards;
+}
+header.scrolled .bg {
+    opacity: 0;
+}
+header.scrolled .icon {
+    top: 0;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    transform: scale(0.8);
+}
+header.scrolled nav ul {
+    opacity: 1;
+    transform: translate(0);
+    visibility: visible;
+}
+section {
+	padding-top: 1%;
+	height: 100%;
+    font-size: 30px;
+    color: #fff;
+}
+.info {
+	padding: 80px 10px 50px 100px;
+	float: left;
+	display: inline;
+	width: 50%;
+}
+.info h1 span {
+	font-family: ArMTG;
+	font-size: 50px;
+}
+.info p {
+	font-family: "Open Sans";
+	line-height: 1.5;
+	font-size: 23px;
+	text-align: justify;
+	font-weight: 200;
+	letter-spacing: .04em;
+	color: #ceced4;
+}
+.info br {
+	margin-bottom: 30px;
 }
 @keyframes fade-in {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
-@keyframes fade-out {
-	0% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0.4;
-	}
-}
-canvas {
-  -webkit-transform: translateZ(1px);
-  transform: translateZ(1px);
-  animation: fade-out 1.5s ease 2s forwards;
-  opacity: 1;
-}
-a, .title {
+section.active {
 	opacity: 0;
-	animation: fade-in 1.5s ease 2s forwards;
+	animation: fade-in 1s ease 1s forwards;
 }
-#editor, #app {
-	color: #9fa2b4;
-	font-size: 3rem;
-	position: absolute;
-	z-index: 999;
-	width: 75%;
-	height: 80%;
-	background: #373946;
-	background: rgba(41,42,53,0.9);
-	margin: 0 auto;
-	left: 12.5%;
-	top: 10%;
-	transition: 0.4s ease;
-	opacity: 0;
-	display: block;
-}
-#app {
-	display: none;
-}
-#decks {
-	width: 100%;
-	height: 28%;
-	display: inline-flex;
-    align-items: center;
-    justify-content: center;
-	padding: 2% 0 2% 0;
-}
-#decks div {
-	border-radius: 0.2em;
-	width: 30%;
+.cta {
+	width: 50%;
 	height: 100%;
-	margin-left: 2%;
+	float: right;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-	border: 1px solid white;
-	-webkit-text-stroke: 1px #1c1c1c;
 }
-#decks div:nth-child(1) {
-	margin: 0;
+.cta img {
+	width: 70%;
+	height: auto;
 }
