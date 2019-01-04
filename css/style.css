@@ -3,14 +3,19 @@
     font-family:ArMTG;
     src:url(ArMTG.ttf);
 }
-body {
-    margin:0;
+body, html {
+	margin:0;
     padding:0;
+	width: 100%;
+	height: 100%;
+}
+body {
     overflow:hidden;
     width:100%;
     height:100%;
     background:#080926;
     font-family:"Montserrat";
+	overflow: hidden;
 }
 .account {
     position:fixed;
@@ -29,15 +34,14 @@ body {
     top:-0.25rem;
 }
 .links {
-    position:fixed;
+    position:absolute;
     left:20px;
     bottom:20px;
     z-index:10;
     text-transform:uppercase;
     font-size:24px;
 }
-.link,
-img {
+.link, img {
     border-radius:0.2em;
 }
 .link,
@@ -115,44 +119,39 @@ a,
     opacity:0;
     animation:fade-in 1.5s ease 2.5s forwards;
 }
-#editor,
-#app {
+#editor {
+	margin-top: 100%;
     color:#9fa2b4;
     font-size:3rem;
-    position:absolute;
-    z-index:999;
-    width:75%;
-    height:80%;
-    background:#373946;
-    background:rgba(41, 42, 53, 0.9);
-    margin:0 auto;
-    left:12.5%;
-    top:10%;
-    transition:0.4s ease;
-    opacity:0;
+    width:100%;
+    height:100%;
     display:block;
-}
-#app {
-    display:none;
+	animation:fade-in 1.5s ease 2.5s forwards;
+	opacity: 0;
 }
 #decks {
     width:100%;
-    height:28%;
+    height:30%;
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    padding:2% 0 2% 0;
+    padding:5% 0 5% 0;
 }
 #decks div {
+	cursor: pointer!important;
+	font-size: 24px;
     border-radius:0.2em;
-    width:30%;
+    width:27%;
     height:100%;
-    margin-left:2%;
+    margin-left:5%;
     display:inline-flex;
     align-items:center;
     justify-content:center;
     border:1px solid white;
     -webkit-text-stroke:1px #1c1c1c;
+}
+#decks div:hover {
+	opacity: 0.5;
 }
 #decks div:nth-child(1) {
     margin:0;
