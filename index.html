@@ -1,46 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 
 <head>
-    <meta charset="UTF-8">
-    <title>ArMTG</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>ArMTG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="bg"></div>
-        <div class="icon"></div>
-		<div id="scroll" class="fa fa-chevron-down"></div>
-        <nav>
-            <ul>
-                <li>About</li>
-                <li>Decks</li>
-                <li>App</li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-		<div class="info">
-			<h1>Welcome to <span>ArMTG</span></h1>
-			<p>
-				ArMTG allows you to play Magic, The Gathering via Augmented Reality, using a set of printed trackers to fetch card images from Gatherer, allowing for use of multiple decks and formats.
-				<br>
-				ArMTG offers features like sideboarding and shuffling through the deck interface, without the need to physically shuffle the cards.
-				<br>
-				ArMTG consists of a deck editor overlay for loading and saving multiple decks, and trying out others' decks, using your device's webcam and interchangeable encoded cards.
-			</p>
-		</div>
-		<div class="cta">
-			<img src="https://camo.githubusercontent.com/a909d9b651f9618c6f1f0563efc0b3a13db106b0/68747470733a2f2f692e706f7374696d672e63632f7843684b73776d562f41724d54472e706e67"/>
-		</div>
-    </section>
+  <div class="app">
+  <header class="header">
+    <div class="header__left">
+      <span>ArMTG</span>
+    </div>
+    <div class="header__right">
+      <p><span id="date">Thu, 14 Jun</span> | <span id="clock">16:20</span></p>
+    </div>
+  </header>
+  
+  <nav class="nav">
+    <ul class="nav__menu">
+      <li class="nav__item">
+        <a href="#home" class="nav__link" data-scroll-to>
+          <div class="media">
+            <img src="img/house.png" alt="" class="media__img">
+            <p class="media__content">
+              <strong>Home</strong><br />
+            </p>
+          </div>
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#metagame" class="nav__link" data-scroll-to>
+          <div class="media">
+            <img src="img/meta.png" alt="" class="media__img">
+            <p class="media__content">
+              <strong>Metagame</strong><br />
+              Get the latest on your <b>Modern</b> metagame.
+            </p>
+          </div>
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link" data-scroll-to>
+          <div class="media">
+            <img src="img/deck.png" alt="" class="media__img">
+            <p class="media__content">
+              <strong>Deck Editor</strong><br />
+              Create and find decks using the AR Deck Editor.
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  
+  <main class="main">
+    <article class="section" id="home" data-section>
+      <header class="section__header" style="background-image: url('img/home.gif');">
+        <h1 class="section__title">Home</h1>
+        <div class="section__controls">
+          <button class="btn btn--prev" title="Previous">
+            <span class="arrow arrow--left"></span>
+          </button>
+          <button class="btn btn--next" title="Next">
+            <span class="arrow arrow--right"></span>
+          </button>
+          <div class="user">
+            <img src="img/user.gif" class="user__img" alt="" />
+            <span class="user__name">Cody Bennett</span>
+          </div>
+        </div>
+      </header>
+	  <div class="section__content">
+			<ul class="boxgrid">
+				<li class="boxgrid__item">
+					<a href="#metagame" class="box box--weather" style="background: url('img/modernMeta.jpg');background-size:cover;">
+						<p><span class="text--large">Metagame</span></p>
+					</a>
+				</li>
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <script src="js/index.js"></script>
+				<li class="boxgrid__item">
+					<a href="#deckeditor" class="box box--weather" style="background: url('img/deckEditor.gif');background-size:cover;">
+						<p><span class="text--large">Deck Editor</span></p>
+					</a>
+				</li>
+				
+				<li class="boxgrid__item boxgrid__item--wide">
+					<a href="#app" class="box box--weather" style="background: url('img/app.jpg');background-size:cover;">
+						<p><span class="text--large">App</span></p>
+					</a>
+				</li>
+			</ul>
+      </div>
+    </article>
+	<article class="section" id="metagame" data-section>
+		<header class="section__header" style="background-image: url('img/modernMeta.jpg');">
+			<h1 class="section__title">Metagame</h1>
+			<p class="section__subtitle">An in-depth analysis of an ever-changing metagame.</p>
+			<div class="section__controls">
+				<button class="btn btn--prev" title="Previous"><span class="arrow arrow--left"></span> 
+				</button>
+				<button class="btn btn--next" title="Next"><span class="arrow arrow--right"></span> 
+				</button>
+				<div class="user">
+					<img src="img/user.gif" class="user__img" alt="" />
+					<span class="user__name">Cody Bennett</span>
+				</div>
+			</div>
+		</header>
+		<div class="section__content">
+			<ul class="boxgrid">
+				<li class="boxgrid__item">
+					<a href="javascript:void(0);" class="box box--weather">
+						<p><span class="text--large">Recent<br>Stats</span></p>
+					</a>
+				</li>
+
+				<li class="boxgrid__item">
+					<a href="https://www.reddit.com/r/spikes/comments/afwiqs/modern_mox_insights_metagame_report_3_magicfest/ee27lpm/?context=3" target="_blank" class="box box--image">
+						<img src="img/metaDat.png" class="box__img" alt="" />
+					</a>
+				</li>
+				
+				<li class="boxgrid__item">
+					<a href="#" class="box box--cost">
+						<p><span class="text--large">Popular<br>Decks</span></p>
+					</a>
+				</li>
+				
+				<li class="boxgrid__item">
+					<a href="#" class="box box--image">
+						<img src="img/deck1.jpg" class="box__img" alt="" />
+					</a>
+				</li>
+				<li class="boxgrid__item">
+					<a href="#" class="box box--image">
+						<img src="img/deck2.jpg" class="box__img" alt="" />
+					</a>
+				</li>
+			</ul>
+		</div>
+	</article>
+  </main>
+  
+  <button class="scrollctrl scrollctrl--prev" data-scroll-dir="prev">
+    <span class="arrow arrow--large arrow--up"></span>
+  </button>
+  <button class="scrollctrl scrollctrl--next" data-scroll-dir="next">
+    <span class="arrow arrow--large arrow--down"></span>
+  </button>
+  
+  <footer class="footer" style="overflow:auto;">
+    <p>The literal and graphical information presented on this site about Magic: The Gathering, including card images, the mana symbols, and Oracle text, is copyright Wizards of the Coast, LLC, a subsidiary of Hasbro, Inc. This website is not produced by, endorsed by, supported by, or affiliated with Wizards of the Coast.</p>
+	<p>All other content &copy; 2018&dash;<script>document.write(new Date().getFullYear());</script> ArMTG</p>
+    <p>Created by <a href="https://codyb.co" target="_blank">Cody Bennett</a></p>
+    
+    <p class="footer__more">
+      <a href="https://github.com/CodyJasonBennett/ArMTG" target="_blank" rel="noopener noreferrer">View Source</a>
+      <!--&nbsp;&middot;&nbsp;
+      <a href="javascript:esc();">Exit VR</a>-->
+    </p>
+  </footer>
+</div>
+
+	<script>
+	function getTime(date) {
+	  var hours = date.getHours();
+	  var minutes = date.getMinutes();
+	  var ampm = hours >= 12 ? 'pm' : 'am';
+	  hours = hours % 12;
+	  hours = hours ? hours : 12;
+	  minutes = minutes < 10 ? '0'+minutes : minutes;
+	  var strTime = hours + ':' + minutes + ' ' + ampm;
+	  return strTime;
+	}
+	
+	function time() {
+		var date = new Date();
+		var dd = date.getDate();
+		var mm = date.getMonth() + 1;
+		var yyyy = date.getFullYear();
+		if (dd < 10) {
+		  dd = '0' + dd;
+		}
+		if (mm < 10) {
+		  mm = '0' + mm;
+		}
+		var today = mm + '/' + dd + '/' + yyyy;
+		document.getElementById('date').innerHTML = today;
+		document.getElementById('clock').innerHTML = getTime(date);
+		setInterval(time, 1000);
+	}
+	time();
+	</script>
+    <script  src="js/index.js"></script>
+
+
+
+
 </body>
 
 </html>
