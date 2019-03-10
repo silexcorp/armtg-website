@@ -8,7 +8,7 @@ ArMTG
 ![Build Status](https://goo.gl/mYwr7u)
 ![Language Grade: JavaScript](https://goo.gl/SMkehA)
 
-## An augmented reality solution for Online Magic.
+## An augmented reality solution for online and paper Magic, the Gathering.
 
 ![ArMTG](https://i.postimg.cc/xChKswmV/ArMTG.png)
 
