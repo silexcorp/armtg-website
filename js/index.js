@@ -1,7 +1,8 @@
 var SELECTORS = {
   section: '[data-section]',
   scrollTo: '[data-scroll-to]',
-  scrollDir: '[data-scroll-dir]' };
+  scrollDir: '[data-scroll-dir]'
+};
 
 var sectionsArray = Array.from(document.querySelectorAll(SELECTORS.section));
 var scrollToElements = document.querySelectorAll(SELECTORS.scrollTo);
@@ -21,30 +22,34 @@ var getScrollTarget = function getScrollTarget(dir) {
   return false;
 };
 
-scrollDirElements.forEach(function (el) {
-  el.addEventListener('click', function () {
+scrollDirElements.forEach(function(el) {
+  el.addEventListener('click', function() {
     var direction = el.dataset.scrollDir;
     var target = getScrollTarget(direction);
 
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+      target.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   });
 });
 
-scrollToElements.forEach(function (el) {
-  el.addEventListener('click', function (e) {
+scrollToElements.forEach(function(el) {
+  el.addEventListener('click', function(e) {
     e.preventDefault();
     var targetId = el.getAttribute('href');
     var target = document.querySelector(targetId);
 
     if (target) {
-      sectionsArray.forEach(function (section, index) {
+      sectionsArray.forEach(function(section, index) {
         if (section.id === targetId.replace('#', '')) {
           currentSectionIndex = index;
         }
       });
-      target.scrollIntoView({ behavior: 'smooth' });
+      target.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   });
 });
