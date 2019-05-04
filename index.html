@@ -1,184 +1,695 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>ARMTG</title>
+		<link rel="shortcut icon" type="image/png" href="favicon.png">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.lettering.min.js"></script>
+		<script>
+			if (window.matchMedia("(min-width: 768px)").matches) {
+				document.write('<script src="assets/js/bundle.js" defer><\/script>');
+			}
+			function requestFullScreen() {
 
-  <head>
-    <meta charset="UTF-8">
-    <title>ArMTG</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="css/style.css">
-  </head>
+				var i = document.body;
 
-  <body>
-    <div class="app">
-      <header class="header">
-        <div class="header__left">
-          <span>ArMTG</span>
-        </div>
-        <div class="header__right">
-          <p><span id="date">Thu, 14 Jun</span> | <span id="clock">16:20</span>&nbsp;</p><img src="https://codyb.co/logo.png" class="user__img" alt="" /><p>&nbsp;Cody Bennett</p>
-        </div>
-      </header>
+				if (document.exitFullscreen) {
+					document.exitFullscreen();
+				} else if (document.webkitExitFullscreen) {
+					document.webkitExitFullscreen();
+				} else if (document.mozCancelFullScreen) {
+					document.mozCancelFullScreen();
+				} else if (document.msExitFullscreen) {
+					document.msExitFullscreen();
+				}
+				if (i.requestFullscreen) {
+					i.requestFullscreen();
+				} else if (i.webkitRequestFullscreen) {
+					i.webkitRequestFullscreen();
+				} else if (i.mozRequestFullScreen) {
+					i.mozRequestFullScreen();
+				} else if (i.msRequestFullscreen) {
+					i.msRequestFullscreen();
+				}
+			}
+		</script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-87004507-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
 
-      <nav class="nav">
-        <ul class="nav__menu">
-          <li class="nav__item">
-            <a href="#home" class="nav__link" data-scroll-to>
-              <div class="media">
-                <svg class="media__img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path data-name="layer5" fill="#ffdea5" d="M10 29v32h14V41h16v20h14V28.769L32 11 10 29z"></path><path data-name="layer4" fill="#f27e7c" d="M54 21.934v-14.6h-9v7.445"></path><path data-name="layer3" fill="#3f5275" d="M32 4.334l-30 24 4 4 26-21 26 21 4-4-30-24z"></path><path data-name="layer2" fill="#db8f5d" d="M24 41h16v20H24z"></path><circle data-name="layer1" cx="32" cy="28" r="5" fill="#78d1f4"></circle><path data-name="opacity" fill="#000064" opacity=".15" d="M32 4.334L10.278 21.712l-8.237 6.62L6 32.334l4-3.23V61h21.917V41H32V4.334z"></path></svg>
-                <p class="media__content">
-                  <strong>Home</strong><br />
-                </p>
-              </div>
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="#metagame" class="nav__link" data-scroll-to>
-              <div class="media">
-                <svg class="media__img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path data-name="layer3" d="M32 7C15.432 7 2 15.955 2 27v10c0 11.046 13.432 20 30 20a41 41 0 0 0 17-3.523V43l-9-8.471L32 27h1V7.017C32.667 7.01 32.335 7 32 7z" fill="#4db9e8"></path><path data-name="layer2" d="M32 27l8 7.529L49 43v10.478C56.851 49.87 62 43.837 62 37V27z" fill="#92d5b5"></path><path data-name="opacity" d="M49 43.478A41 41 0 0 1 32 47C15.432 47 2 38.047 2 27v10c0 11.046 13.432 20 30 20a41 41 0 0 0 17-3.523C56.851 49.87 62 43.837 62 37V27c0 6.838-5.149 12.87-13 16.478z" fill="#000064" opacity=".15"></path><path data-name="layer1" d="M32 7.017V27h30C62 16.179 49 7.017 32 7.017z" fill="#f27e7c"></path></svg>
-                <p class="media__content">
-                  <strong>Metagame</strong><br /> Get the latest on your metagame.
-                </p>
-              </div>
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link" data-scroll-to>
-              <div class="media">
-                <svg class="media__img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path data-name="layer4" d="M2 36a2 2 0 0 0 2 2h48a2 2 0 0 0 2-2V18H2z" fill="#adc4ea"></path><path data-name="opacity" d="M2 36a2 2 0 0 0 2 2h48a2 2 0 0 0 2-2V18H2z" fill="#000064" opacity=".15"></path><path data-name="layer4" d="M2 48a2.07 2.07 0 0 0 2 2h48a2.151 2.151 0 0 0 2-2V34H2z" fill="#adc4ea"></path><path data-name="opacity" d="M2 48a2.07 2.07 0 0 0 2 2h48a2.151 2.151 0 0 0 2-2V34H2z" fill="#000064" opacity=".3"></path><path data-name="layer4" d="M54 4a2.07 2.07 0 0 0-2-2H4a2.151 2.151 0 0 0-2 2v14h52z" fill="#adc4ea"></path><circle data-name="layer3" cx="11" cy="10" r="2" fill="#536895"></circle><circle data-name="layer3" cx="11" cy="26" r="2" fill="#536895"></circle><circle data-name="layer3" cx="11" cy="42" r="2" fill="#536895"></circle><path data-name="layer3" d="M46 27H30a1 1 0 0 1 0-2h16a1 1 0 0 1 0 2zm0 16H30a1 1 0 0 1 0-2h16a1 1 0 0 1 0 2zm0-32H30a1 1 0 0 1 0-2h16a1 1 0 0 1 0 2z" fill="#536895"></path><path data-name="opacity" d="M46.292 49.989c0-3.989 2.542-.635 2.542-1.989 0-3.4-15.042-15.333-18.667-17.958-6.516 6.516-14.734 14.552-20.125 19.943 1.542 0 11.9.016 11.9.016z" fill="#000064" opacity=".18"></path><path data-name="layer2" fill="#78d1f4" d="M34.995 42l20 20L62 54.995l-20-20"></path><path data-name="layer1" fill="#fddab3" d="M29.98 29.84l5.018 12.208L42 34.995 29.98 29.84z"></path><path data-name="opacity" fill="#000064" opacity=".15" d="M29.98 29.84L58.495 58.5l-3.5 3.5-20-20-5.015-12.16z"></path></svg>
-                <p class="media__content">
-                  <strong>Deck Editor</strong><br /> Create and find decks using the AR Deck Editor.
-                </p>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </nav>
+		  gtag('config', 'UA-87004507-2');
+		</script>
+	</head>
+	<body>
+	<div id="preloader">
+		<div class="splash" id="splash">
+			<h2>Hello</h2>
+			<h2>Welcome to the Future</h2>
+			<h2>ARMTG</h2>
+		</div>
+		<div class="preloader" id="loader">
+			<div class="lines">
+				<div class="line line-1"></div>
+				<div class="line line-2"></div>
+				<div class="line line-3"></div>
+			</div>
 
-      <main class="main">
-        <article class="section" id="home" data-section>
-          <header class="section__header" style="background-image: url('img/home.gif');">
-            <h1 class="section__title">Home</h1>
-            <div class="section__controls">
-              <button class="btn btn--prev" title="Previous"><span class="arrow arrow--left"></span></button>
-              <button class="btn btn--next" title="Next"><span class="arrow arrow--right"></span></button>
-            </div>
-          </header>
-          <div class="section__content">
-            <ul class="boxgrid">
-              <li class="boxgrid__item">
-                <a href="#metagame" class="box box--weather" style="background: url('img/modernMeta.jpg');background-size:cover;">
-                  <p><span class="text--large">Metagame</span></p>
-                </a>
-              </li>
+			<div class="loading-text">LOADING</div>
+		</div>
+	</div>
 
-              <li class="boxgrid__item">
-                <a href="#deckeditor" class="box box--weather" style="background: url('img/deckEditor.gif');background-size:cover;">
-                  <p><span class="text--large">Deck Editor</span></p>
-                </a>
-              </li>
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 
-              <li class="boxgrid__item boxgrid__item">
-                <a href="#app" class="box box--weather" style="background: url('img/app.jpg');background-size:cover;">
-                  <p><span class="text--large">App</span></p>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </article>
-        <article class="section" id="metagame" data-section>
-          <header class="section__header" style="background-image: url('img/modernMeta.jpg');">
-            <h1 class="section__title">Metagame</h1>
-            <p class="section__subtitle">An in-depth analysis of an ever-changing metagame.</p>
-            <div class="section__controls">
-              <button class="btn btn--prev" title="Previous"><span class="arrow arrow--left"></span></button>
-              <button class="btn btn--next" title="Next"><span class="arrow arrow--right"></span></button>
-            </div>
-          </header>
-          <div class="section__content">
-            <ul class="boxgrid">
-              <li class="boxgrid__item">
-                <a href="javascript:void(0);" class="box box--weather">
-                  <p><span class="text--large">Recent<br>Stats</span></p>
-                </a>
-              </li>
+			<a id="homeg" class="logo js-scroll-trigger" href="#">
+				<img src="favicon.png">
+			</a>
 
-              <li class="boxgrid__item">
-                <a href="#" class="box box--image">
-                  <img src="img/metaDat.png" class="box__img" alt="" />
-                </a>
-              </li>
+			<ul class="navbar-side">
+				<li class="contacts-button">
+					<a href="#" class="btn btn-primary btn-glitch signupsg" id="signupsg">Signup</a>
+				</li>
+				<li class="mobile-button">
+					<a href="#signup" class="btn btn-primary ">Signup</a>
+				</li>
+				<li class="desktop-button">
+					<a href="#" class="navbar-toggler navbar-toggler-right btn-glitch navbutton" type="button">
+						<i class="fa fa-bars"></i>
+					</a>
+				</li>
+				<li class="mobile-button">
+					<a href="#" class="navbar-toggler navbar-toggler-right btn-glitch navbutton" type="button" onclick="openOver('menu')">
+						<i class="fa fa-bars"></i>
+					</a>
+				</li>
+			</ul>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<div class="button">
+					<a class="btn-open" href="#"></a>
+				</div>
+			</div>
 
-              <li class="boxgrid__item">
-                <a href="#" class="box box--cost">
-                  <p><span class="text--large">Popular<br>Decks</span></p>
-                </a>
-              </li>
+	</nav>
 
-              <li class="boxgrid__item">
-                <a href="#" class="box box--image">
-                  <img src="img/deck1.jpg" class="box__img" alt="" />
-                </a>
-              </li>
-              <li class="boxgrid__item">
-                <a href="#" class="box box--image">
-                  <img src="img/deck2.jpg" class="box__img" alt="" />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </article>
-      </main>
+	<div id="menuover" class="overlay">
+		<a href="javascript:void(0)" class="closebtn desktop-button">&times;</a>
+		<a href="javascript:void(0)" class="closebtn mobile-button" onclick="closeOver('menu')">&times;</a>
+		<div class="container">
+			<div class="row">
+				<div class="menu-over vertical-center">
+					<ul class="menu-desktop">
+						<li id="homem"><a href="#" class="navbutton2">Home</a></li>
+						<li id="aboutm" class=""><a href="#" class="navbutton3">About</a></li>
+						<li id="supportm" class=""><a href="#" class="navbutton4">Support</a></li>
+						<li id="featuresm" class=""><a href="#" class="navbutton5">Features</a></li>
+						<li id="signupm" class=""><a href="#" class="navbutton6">Signup</a></li>
+					</ul>
+					<ul class="menu-mobile">
+						<li class="current"><a href="#home" onclick="closeOver('menu')">Home</a></li>
+						<li class=""><a href="#about" onclick="closeOver('menu')">About</a></li>
+						<li class=""><a href="#support" onclick="closeOver('menu')">Support</a></li>
+						<li class=""><a href="#features" onclick="closeOver('menu')">Features</a></li>
+						<li class=""><a href="#signup" onclick="closeOver('menu')">Signup</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 
-      <button class="scrollctrl scrollctrl--prev" data-scroll-dir="prev"><span class="arrow arrow--large arrow--up"></span></button>
-      <button class="scrollctrl scrollctrl--next" data-scroll-dir="next"><span class="arrow arrow--large arrow--down"></span></button>
+	<svg class="shape-overlays" viewbox="0 0 100 100" preserveaspectratio="none">
+		<path class="shape-overlays__path"></path>
+		<path class="shape-overlays__path"></path>
+		<path class="shape-overlays__path"></path>
+	</svg>
 
-      <footer class="footer" style="overflow:auto;">
-        <p>The literal and graphical information presented on this site about Magic: The Gathering, including card images, the mana symbols, and Oracle text, is copyright Wizards of the Coast, LLC, a subsidiary of Hasbro, Inc. This website is not produced
-          by, endorsed by, supported by, or affiliated with Wizards of the Coast.</p>
-        <p>All other content &copy; 2018 &dash;
-          <script>
-            document.write(new Date().getFullYear());
+	<div id="aboutover" class="overlay">
+		<a href="javascript:void(0)" class="desktop-button closebtn">&times;</a>
+		<a href="javascript:void(0)" class="mobile-button closebtn" onclick="closeOver('about')">&times;</a>
+		<div class="container">
+			<div class="row">
+				<div class="text col-lg-6">
+					<h5>Background Text</h5>
+					<h2>Title</h2>
+					<p>
+						Content
+					</p>
+				</div>
+				<div class="content col-lg-6">
+					<div class="moreimage">
+					</div>
+				</div>
+				<div class="features fadeInRight animated">
+						<div class="col-lg-4" style="height: 250px">
+							<h1 class="backtext">01</h1>
+							<img src="data\desktop.png">
+							<h3>Feature One</h3>
+						</div>
+						<div class="col-lg-4" style="height: 250px">
+							<h1 class="backtext">02</h1>
+							<img src="data\mobile.png">
+							<h3>Feature Two</h3>
+						</div>
+						<div class="col-lg-4" style="height: 250px">
+							<h1 class="backtext">03</h1>
+							<img src="data\vr.png">
+							<h3>Feature Three</h3>
+						</div>
+				</div><!--
+				<div class="col-lg-8 offset-2" style="text-align: center; margin-bottom: 150px">
+					<h1>The Future of Magic</h1>
+					<p style="text-align: center!important;">
+						Content
+					</p>
+					<div class="buttons">
+						<a href="javascript:void(0)" class="btn btn-primary signupsg" id="signupsg">
+							Learn More
+						</a>
+					</div>
+				</div>-->
+			</div>
+		</div>
+	</div>
+	<div id="mainover" class="overlay">
+		<a href="javascript:void(0)" class="desktop-button closebtn">&times;</a>
+		<a href="javascript:void(0)" class="mobile-button closebtn" onclick="closeOver('future')">&times;</a>
+		<div class="container">
+			<div class="row">
+				<div class="text col-lg-6">
+					<h5>Features</h5>
+					<h2>Where can I use ARMTG?</h2>
+					<p>Content</p>
+				</div>
+				<div class="content col-lg-6">
+					<div class="moreimage">
 
-          </script> ArMTG</p>
-        <p>Created by <a href="https://codyb.co" target="_blank">Cody Bennett</a></p>
+					</div>
+				</div>
+				<div class="features fadeInRight animated">
+					<div class="col-lg-6">
+						<h1 class="backtext">01</h1>
+						<div class="col-lg-12 service-block">
+							<div class="col-md-3">
+								<img src="data\desktop.png">
+							</div>
+							<div class="col-md-9">
+								<h3>Feature One</h3>
+								<p>Content</p>
+							</div>
+						</div>
+						<h1 class="backtext">02</h1>
+						<div class="col-lg-12 service-block">
+							<div class="col-md-3">
+								<img src="data\mobile.png">
+							</div>
+							<div class="col-md-9">
+								<h3>Feature Two</h3>
+								<p>Content</p>
+							</div>
+						</div>
+						<h1 class="backtext">03</h1>
+						<div class="col-lg-12 service-block">
+							<div class="col-md-3">
+								<img src="data\vr.png">
+							</div>
+							<div class="col-md-9">
+								<h3>Feature Three</h3>
+								<p>Content</p>
+							</div>
+						</div>
 
-        <p class="footer__more">
-          <a href="https://github.com/CodyJasonBennett/ArMTG" target="_blank" rel="noopener noreferrer">View Source</a>
-        </p>
-      </footer>
-    </div>
-    <script>
-      function getTime(date) {
-        var hours = date.getHours();
-        var minutes = date.getMinutes();
-        var ampm = hours >= 12 ? 'pm' : 'am';
-        hours = hours % 12;
-        hours = hours ? hours : 12;
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        var strTime = hours + ':' + minutes + ' ' + ampm;
-        return strTime;
-      }
+					</div>
+					<div class="col-lg-6">
+						<img src="data\mobile.png">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-      function time() {
-        var date = new Date();
-        var dd = date.getDate();
-        var mm = date.getMonth() + 1;
-        var yyyy = date.getFullYear();
-        if (dd < 10) {
-          dd = '0' + dd;
-        }
-        if (mm < 10) {
-          mm = '0' + mm;
-        }
-        var today = mm + '/' + dd + '/' + yyyy;
-        document.getElementById('date').innerHTML = today;
-        document.getElementById('clock').innerHTML = getTime(date);
-        setInterval(time, 1000);
-      }
-      time();
-    </script>
-    <script src="js/index.js"></script>
-  </body>
+	<div class="dotstyle dotstyle-fillup" id="dot">
+		<ul>
+			<li class="current" id="home"><a href="#">Home</a></li>
+			<li id="about" class=""><a></a> </li>
+			<li id="future" class=""><a></a> </li>
+			<li id="gallery" class=""><a></a> </li>
+			<li id="contacts" class=""><a></a> </li>
+		</ul>
+	</div>
 
+<!--Desktop-->
+
+<div id="sections">
+	<section id="homesection" class="vertical-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div id="scene1" class="parallax">
+						<div data-depth-x="0.5">
+							<h1>ARMTG</h1>
+							<h3>The Future of Play</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svg-sprite">
+		<defs>
+			<filter id="filter">
+				<feturbulence type="fractalNoise" basefrequency="0.000001 0.000001" numoctaves="1" result="warp" seed="1"></feturbulence>
+				<fedisplacementmap xchannelselector="R" ychannelselector="G" scale="30" in="SourceGraphic" in2="warp"></fedisplacementmap>
+			</filter>
+		</defs>
+	</svg>
+	<section id="aboutSection" class="vertical-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+				</div>
+				<div class="col-lg-4">
+					<div id="scene2" class="parallax">
+						<div data-depth-x="0.5">
+							<h1>Seamless Integration</h1>
+							<p>ARMTG brings smooth play online and in paper with just a few clicks.</p>
+							<a href="javascript:void(0)" class="btn btn-primary btn-glitch aboutButton">Learn More
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 21 8" width="21" height="8" xml:space="preserve">
+									<polygon points="21,2.5 18.1,0 18.1,2 0,2 0,3 18.1,3 18.1,5 "></polygon>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+
+
+	<section id="supportSection" class="vertical-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div id="scene3" class="parallax">
+						<div data-depth-x="0.5">
+							<h1>Feature 2</h1>
+							<p>Content</p>
+							<a href="javascript:void(0)" class="btn btn-primary btn-glitch supportButton">Learn More
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 21 8" width="21" height="8" xml:space="preserve">
+									<polygon points="21,2.5 18.1,0 18.1,2 0,2 0,3 18.1,3 18.1,5 "></polygon>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="platformSection" class="vertical-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div id="scene4" class="parallax">
+						<div data-depth-x="0.3">
+							<div class="card__header card__header--19">
+								<div class="card__watermark" data-watermark="01"></div>
+
+								<span class="card__price card__will-animate">Desktop</span>
+
+								<h1 class="card__title card__will-animate">Performance of Desktop</h1>
+								<span class="card__subtitle card__will-animate">
+										Features
+								</span>
+
+							</div>
+
+							<div class="card__body">
+								<img src="assets/desktop.png" alt="Desktop Support" class="card__image card__will-animate">
+								<a href="javascript:void(0)" class="btn btn-primary btn-glitch signupsg">Learn More</a>
+
+								<span class="card__category card__will-animate">Desktop</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div id="scene5" class="parallax">
+						<div data-depth-x="0.3">
+								<div class="card__header card__header--mobile">
+									<div class="card__watermark" data-watermark="02"></div>
+
+									<span class="card__price card__will-animate">Mobile</span>
+
+									<h1 class="card__title card__will-animate">Responsiveness of Mobile</h1>
+									<span class="card__subtitle card__will-animate">
+										Features
+									</span>
+
+								</div>
+
+								<div class="card__body">
+									<img src="assets/mobile.png" alt="Mobile Support" class="card__image card__will-animate">
+									<a href="javascript:void(0)" class="btn btn-primary btn-glitch signupsg">Learn More</a>
+
+									<span class="card__category card__will-animate">Mobile</span>
+								</div>
+						</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div id="scene6" class="parallax">
+					<div data-depth-x="0.3">
+								<div class="card__header card__header--vr">
+									<div class="card__watermark" data-watermark="03"></div>
+
+									<span class="card__price card__will-animate">VR</span>
+
+									<h1 class="card__title card__will-animate">Immersion of VR</h1>
+									<span class="card__subtitle card__will-animate">
+										Features
+									</span>
+
+								</div>
+
+								<div class="card__body">
+
+									<img src="assets/vr.png" alt="VR" class="card__image card__will-animate">
+
+									<a href="javascript:void(0)" class="btn btn-primary btn-glitch signupsg">Learn More</a>
+
+									<span class="card__category card__will-animate">VR</span>
+								</div>
+					</div>
+				</div> <!-- /wrapper -->
+
+
+			</div>
+		</div>
+		</div>
+	</section>
+
+	<section id="signupSection" class="vertical-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8" style="padding: 100px 0">
+					<h1>Get Started</h1>
+					<p>
+						Register an account and get straight to playing.
+					</p>
+				</div>
+				<div class="col-lg-4" id="panel">
+					<h6>Signup</h6>
+
+					<form>
+						<div class="group">
+							<input type="text" id="username" name="username" required="">
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label for="username">Username</label>
+						</div>
+
+						<div class="group">
+							<input type="text" id="email" name="email" required="">
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label for="email">Email</label>
+						</div>
+
+						<div class="group">
+							<input type="password" id="password" required="">
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label for="password">Password</label>
+						</div>
+
+						<input type="text" name="isBot" style="display: none">
+						<div class="group">
+							<button id="email-submit-btn" type="submit" class="btn btn-warning btn-glitch">Signup<span class="glyphicon glyphicon-send"></span></button>
+						</div>
+					</form>
+					<div id="thankyouBlock" style="display:none">
+						<p>
+							Check your email to complete signup.
+						</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+</div>
+
+	<script>
+
+		function openOver(overname) {
+			document.getElementById(overname+"over").style.display = "inline-table";
+			var d = document.getElementById(overname+"over");
+			var x = document.getElementsByTagName("BODY")[0];
+			d.classList.add("is-opened");
+			x.style.overflow = "hidden";
+
+		}
+
+		function closeOver(overname) {
+			document.getElementById(overname+"over").style.display = "none";
+			var d = document.getElementById(overname+"over");
+			var x = document.getElementsByTagName("BODY")[0];
+			d.classList.remove("is-opened");
+			x.style.overflow = "scroll";
+		}
+	</script>
+
+		<div id="renderer" class="main-header"></div>
+
+	<section id="mobile">
+		<div id="home" class="homemobile vertical-center">
+			<div class="container">
+				<div class="row">
+					<h1>ARMTG</h1>
+					<h3>A WebGL Experiment</h3>
+					<div class="buttons">
+						<a href="#about" class="btn btn-primary">About</a>
+						<a href="#signup" class="btn btn-primary">Signup</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="about" class="aboutmobile vertical-center">
+				<div class="row">
+
+					<div class="aboutblock col-lg-6" style="margin-right: 10%;">
+						<div class="aboutimage" style="background-image: url('assets/support.png')">
+
+						</div>
+						<div class="container" style="margin-top: -110px">
+							<h5>Background Text</h5>
+							<h2>Title</h2>
+						</div>
+					</div>
+					<div class="container" style="margin-top: 25px;text-align: left">
+						<div class="col-lg-6">
+							<p>Content</p>
+
+							<a href="javascript:void(0)" class="btn btn-primary" onclick="openOver('about');">Learn More
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 21 8" width="21" height="8" xml:space="preserve">
+									<polygon points="21,2.5 18.1,0 18.1,2 0,2 0,3 18.1,3 18.1,5 "></polygon>
+								</svg>
+							</a>
+						</div>
+					</div>
+
+				</div>
+		</div>
+		<div id="support" class="futuremobile vertical-center">
+			<div class="row">
+
+				<div class="aboutblock col-lg-6" style="margin-left: 10%;">
+					<div class="aboutimage" style="margin-left: 30%">
+
+					</div>
+					<div class="container" style="margin-top: -110px; text-align: right;">
+						<h5>Background Text</h5>
+						<h2>Title</h2>
+					</div>
+				</div>
+				<div class="container" style="margin-top: 25px;text-align: right">
+					<div class="col-lg-6">
+						<p>Content</p>
+						<a href="javascript:void(0)" class="btn btn-primary" onclick="openOver('future');">Learn More
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 21 8" width="21" height="8" xml:space="preserve">
+									<polygon points="21,2.5 18.1,0 18.1,2 0,2 0,3 18.1,3 18.1,5 "></polygon>
+								</svg>
+						</a>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div id="features" class="gallerymobile">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<h2 style="text-align: left">Features</h2>
+								<div class="card__header card__header--19">
+									<div class="card__watermark" data-watermark="01"></div>
+
+									<img src="favicon.png" alt="Desktop" class="card__logo card__will-animate">
+
+									<span class="card__price card__will-animate">Desktop</span>
+
+									<h1 class="card__title card__will-animate">Performance of Desktop</h1>
+									<span class="card__subtitle card__will-animate">
+										Features
+									</span>
+
+								</div>
+
+								<div class="card__body">
+									<img src="data\desktop.png" alt="Desktop" class="card__image card__will-animate">
+									<a href="#signup" class="btn btn-primary signupsg">Learn More</a>
+
+									<span class="card__category card__will-animate">Desktop</span>
+								</div>
+					</div>
+					<div class="col-lg-4">
+								<div class="card__header card__header--mobile">
+									<div class="card__watermark" data-watermark="02"></div>
+
+									<img src="favicon.png" alt="Mobile" class="card__logo card__will-animate">
+
+									<span class="card__price card__will-animate">Mobile</span>
+
+									<h1 class="card__title card__will-animate">Responsiveness if Mobile</h1>
+									<span class="card__subtitle card__will-animate">
+										Features
+										</span>
+
+								</div>
+
+								<div class="card__body">
+									<img src="data\mobile.png" alt="Mobile" class="card__image card__will-animate">
+									<a href="#signup" class="btn btn-primary signupsg">Learn More</a>
+
+									<span class="card__category card__will-animate">Mobile</span>
+								</div>
+					</div>
+					<div class="col-lg-4">
+								<div class="card__header card__header--vr">
+									<div class="card__watermark" data-watermark="03"></div>
+
+									<img src="favicon.png" alt="VR" class="card__logo card__will-animate">
+
+									<span class="card__price card__will-animate">VR</span>
+
+									<h1 class="card__title card__will-animate">Immersion of VR</h1>
+									<span class="card__subtitle card__will-animate">
+										Features
+									</span>
+
+								</div>
+
+								<div class="card__body">
+
+									<img src="data\vr.png" alt="VR" class="card__image card__will-animate">
+
+									<a href="#signup" class="btn btn-primary signupsg">Learn More</a>
+
+									<span class="card__category card__will-animate">VR</span>
+								</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="signup" class="contactsmobile">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<h1>Get Started</h1>
+						<p>
+							Register an account and get straight to playing.
+						</p>
+					</div>
+					<div class="col-lg-12" id="panel">
+						<h6 style="color: #fff;">Signup</h6>
+
+						<form>
+
+							<div class="group">
+								<input type="text" id="usernameM" name="name" required="">
+								<span class="highlight"></span>
+								<span class="bar"></span>
+								<label for="usernameM">Username</label>
+							</div>
+
+							<div class="group">
+								<input type="text" id="email2" name="email" required="">
+								<span class="highlight"></span>
+								<span class="bar"></span>
+								<label for="email">Email</label>
+							</div>
+
+							<div class="group">
+								<input type="password" id="passwordM" required="">
+								<span class="highlight"></span>
+								<span class="bar"></span>
+								<label for="passwordM">Password</label>
+							</div>
+							<input type="text" name="isBot" style="display: none">
+							<div class="group">
+								<button id="email-submit-btn2" type="submit" class="btn btn-warning">Signup<span class="glyphicon glyphicon-send"></span></button>
+							</div>
+						</form>
+						<div id="thankyouBlock2" style="display:none">
+							<p>
+								Check your email to complete signup.
+							</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<div class="footer" id="contentfooter">
+				<div class="footer-buttons">
+					<li style="" class="btn-glitch">
+						<a href="#" onclick="requestFullScreen()">
+							<i class="fa fa-expand" aria-hidden="true"></i>
+						</a>
+					</li>
+					<!--<li>
+						<a href="#" target="_blank" class="btn-glitch">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#" target="_blank" class="btn-glitch">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</a>
+					</li>-->
+				</div>
+
+			</div>
+
+	</body>
+
+	<script>
+		$(".splash > h2").lettering('words').children("span").lettering().children("span").lettering();
+	</script>
+
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/easings.js"></script>
 </html>
