@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0fca5087-7eb8-4ff2-9b6e-256cc5755471/deploy-status)](https://app.netlify.com/sites/armtg/deploys)
 [![npm](https://img.shields.io/npm/v/ar.js.svg)](https://www.npmjs.com/package/ar.js)
 ![License][license-badge]
 ![Dependencies][dependencies-badge]
