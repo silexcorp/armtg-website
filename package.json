@@ -1,0 +1,25 @@
+{
+  "name": "armtg",
+  "version": "2.0.0",
+  "homepage": "https://armtg.codyb.co",
+  "private": true,
+  "devDependencies": {},
+  "dependencies": {},
+  "scripts": {
+    "deploy": "firebase deploy --only hosting",
+    "serve": "firebase serve --only hosting"
+  },
+  "browserslist": {
+    "production": [
+      ">1%",
+      "not dead",
+      "not ie 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
