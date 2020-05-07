@@ -2,7 +2,7 @@
 
 [![Site preview](/src/assets/preview.png)](https://armtg.codyb.co)
 
-Bringing the future to the renowned card game: Magic, the Gathering.
+A multi-platform augmented reality solution to play the card game: Magic, the Gathering. ARMTG connects players with real and digital cards in real-time.
 
 # About
 
